@@ -1,0 +1,102 @@
+body {
+    perspective: 1px;
+}
+
+.card {
+    transition: transform 1s ease;
+}
+
+.card.transition-down {
+    transform: translateY(200%);
+}
+
+.card.animation-down {
+    animation: down-rotate 3s;
+}
+
+.card.scale-skew {
+    animation: scale-skew 2s ease-in-out;
+}
+
+.card.send {
+    transition: transform 2s linear;
+    transform: translateZ(-10px);
+}
+
+.card.share {
+    animation: share 4s ease;
+}
+
+.fa {
+    cursor: pointer;
+    transition: color 1s ease, transform 0.5s ease;
+}
+
+.fa:hover {
+    transform: translateY(-10px);
+}
+
+.fa-eye:hover {
+  color: yellowgreen;
+}
+
+.fa-heart-o:hover {
+  color: red;
+}
+
+.fa-envelope-o:hover {
+  color: dodgerblue;
+}
+
+.fa-share-alt:hover {
+  color: purple;
+}
+
+
+@keyframes down-rotate {
+    0% {
+      transform: translateY(0) rotateZ(0);
+    }
+    50% {
+        transform: translateY(100%) rotateZ(0);
+    }
+    100% {
+        transform: translateY(0) rotateZ(360deg);
+    }
+}
+
+@keyframes scale-skew {
+    0% {
+      transform: scale(1) skew(0);
+    }
+    50% {
+        transform: scale(1.2) skew(30deg);
+    }
+    100% {
+        transform: scale(1) skew(0);
+    }
+}
+
+@keyframes share {
+    0% {
+      transform: rotateZ(0) scaleX(0);
+    }
+    10% {
+        transform: rotateZ(0) scaleX(0.02);
+    }
+    30% {
+        transform: rotateZ(360deg) scaleX(0.02);
+    }
+    50% {
+        transform: rotateZ(720deg) scaleX(0.02);
+    }
+    70% {
+        transform: rotateZ(1080deg) scaleX(0.02);
+    }
+    90% {
+        transform: rotateZ(1440deg) scaleX(0.02);
+    }
+    100% {
+        transform: rotateZ(0) scaleX(0);
+    }
+}
